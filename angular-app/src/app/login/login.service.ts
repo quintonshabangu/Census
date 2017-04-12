@@ -16,7 +16,7 @@ export class LoginService {
     domain: 'quintonshabangu.eu.auth0.com',
     clientID: 'JYYK1HjXr03Ah6UpyvOB6Po1UyLLFVoW',
     // specify your desired callback URL
-    redirectUri: 'http://192.168.99.100:4200',
+    redirectUri: 'http://localhost:4200',
     responseType: 'token id_token'
   });
 
@@ -66,7 +66,7 @@ export class LoginService {
 
   public isAuthenticated() {
     // Check whether the id_token is expired or not
-    return tokenNotExpired();
+    return tokenNotExpired('id_token');
   }
 
   public logout() {
