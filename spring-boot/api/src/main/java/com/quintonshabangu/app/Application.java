@@ -18,6 +18,7 @@ public class Application {
     @Autowired
     public Application(Service service) {
         this.service = service;
+        this.service.createCountries();
     }
 
     @GetMapping("/")

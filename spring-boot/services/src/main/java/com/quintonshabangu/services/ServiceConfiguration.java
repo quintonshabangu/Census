@@ -1,5 +1,7 @@
 package com.quintonshabangu.services;
 
+import com.quintonshabangu.domain.Country;
+import com.quintonshabangu.persistance.CountryRepository;
 import com.quintonshabangu.persistance.JPAConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,8 +16,11 @@ import org.springframework.stereotype.Component;
 )
 @Import({JPAConfig.class})
 public class ServiceConfiguration {
+    CountryRepository countryRepository;
     @Bean
-    public Service service() {
-        return new Service("Hello Nigga");
+    public Service service(CountryRepository countryRepository) {
+        return new Service("Hello World", countryRepository);
     }
+
+
 }

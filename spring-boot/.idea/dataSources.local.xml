@@ -7,9 +7,8 @@
       <schema-pattern>censussystem.*</schema-pattern>
       <default-schemas>censussystem.*</default-schemas>
     </data-source>
-    <data-source name="MySQL - jdbc:mysql://http://192.168.99.100:3306/census-database" uuid="1af459d8-163f-441a-96a4-c5e0879aeeb5">
+    <data-source name="MySQL - census-database@192.168.99.100" uuid="1af459d8-163f-441a-96a4-c5e0879aeeb5">
       <secret-storage>memory</secret-storage>
-      <first-sync>true</first-sync>
       <user-name>quinton</user-name>
     </data-source>
   </component>

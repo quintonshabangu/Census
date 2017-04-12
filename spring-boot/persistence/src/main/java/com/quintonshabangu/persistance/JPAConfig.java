@@ -43,9 +43,9 @@ public class JPAConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/censussystem");
-        dataSource.setUsername("root");
-        dataSource.setPassword("p@$$yP@$$w0rd");
+        dataSource.setUrl("jdbc:mysql://192.168.99.100:3306/census-database");
+        dataSource.setUsername("quinton");
+        dataSource.setPassword("passw0rd");
         return dataSource;
     }
 
