@@ -1,0 +1,3 @@
+com\quintonshabangu\app\Controllers\PersonController.class
+com\quintonshabangu\app\Application.class
+com\quintonshabangu\app\Config\SpringSecurityConfig.class

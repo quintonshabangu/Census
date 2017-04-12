@@ -1,0 +1,24 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+    build: angular-app # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+      
+  #spring: # name of the first service
+    #build: spring-boot # specify the directory of the Dockerfile
+    #ports:
+      #- "8080:8080" # specify port forewarding
+
+  mysql: # name of the first service
+    image: mysql:latest
+    environment: 
+        MYSQL_ROOT_PASSWORD: passw0rd
+        MYSQL_DATABASE: census-database
+        MYSQL_USER: quinton
+        MYSQL_PASSWORD: passw0rd
+        
+    ports:
+      - "3306:3306" # specify port forewarding

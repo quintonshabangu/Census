@@ -1,0 +1,31 @@
+<article>
+
+  </article>
+
+<article>
+  <div class="container col-md-4">
+    <h3>Home</h3>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">People</h3>
+      </div>
+      <div class="panel-body">
+        <div class="container col-md-12">
+          <div>
+            <div style="margin-bottom:30px;" >
+              <a class="btn btn-primary" [routerLink]="['/persons', 0]" href="#">Add a New Person<span class="sr-only">(current)</span></a>
+            </div>
+
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let person of persons | async">
+                <a href="" [routerLink]="['/persons', person.id]">
+                  {{person.id}}. {{person.name}} from {{person.countryName}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

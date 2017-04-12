@@ -1,0 +1,6 @@
+com\quintonshabangu\services\DTOs\PersonDTO.class
+com\quintonshabangu\services\DTOs\CountryDTO.class
+com\quintonshabangu\services\Service.class
+com\quintonshabangu\services\PersonService.class
+com\quintonshabangu\services\ServiceConfiguration.class
+com\quintonshabangu\services\Mapper.class
