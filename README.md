@@ -5,13 +5,12 @@
 
 The spring docker container is unfortunately incomplete, but the solutions can run locally.
 
-# Running the angular app
-The Angular app uses the Angular CLI project, so after installing npm you can run these commands:
-
+# Running the containers
+- Once you have installed Docker, you can run the command on the project root:
 ```sh
-$ npm install
-$ ngServe
+docker-container up
 ```
+- this command will run the Angular app and create a local MySQL instance
 
 The app will be on port localhost:4200
 
