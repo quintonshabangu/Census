@@ -1,5 +1,6 @@
 package com.quintonshabangu.persistance;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -39,13 +40,22 @@ public class JPAConfig {
         return em;
     }
 
+    @Value("${mysql.dbserver}")
+    private String dbserver;
+
+    @Value("${mysql.username}")
+    private String username;
+
+    @Value("${mysql.password}")
+    private String password;
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/census-database");
-        dataSource.setUsername("quinton");
-        dataSource.setPassword("passw0rd");
+        dataSource.setUrl("jdbc:mysql://" + dbserver + ":3306/census-database");
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 

@@ -7,12 +7,9 @@ services:
     ports:
       - "4200:4200" # specify port forewarding
       
-  #spring: # name of the first service
-    #build: spring-boot # specify the directory of the Dockerfile
-    #ports:
-      #- "8080:8080" # specify port forewarding
 
-  mysql: # name of the first service
+
+  mysqldb: # name of the first service
     image: mysql:latest
     environment: 
         MYSQL_ROOT_PASSWORD: passw0rd
@@ -22,3 +19,17 @@ services:
         
     ports:
       - "3306:3306" # specify port forewarding
+      
+      
+  spring: # name of the first service
+    build: spring-boot # specify the directory of the Dockerfile
+    environment:
+        mysql.dbserver: mysqldb
+        
+    ports:
+      - "8080:8080" # specify port forewarding
+      
+    depends_on:
+        - mysqldb
+    links:
+        - mysqldb
